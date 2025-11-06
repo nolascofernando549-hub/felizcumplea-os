@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te deseo un feliz cumpleaños</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #002b55, #001a33);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-top: 40px;
+    color: #ffd700;
+    animation: fadeInDown 2s ease;
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #fff;
+    max-width: 700px;
+    margin: 10px auto 30px auto;
+    line-height: 1.6;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+  }
+
+  .photo {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.05) translateY(-10px); }
+    100% { transform: scale(1) translateY(0); }
+  }
+
+  .photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 3s ease;
+  }
+
+  .photo:hover img {
+    transform: scale(1.1);
+  }
+
+  video {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    margin-top: 10px;
+  }
+
+  /* Mensaje de agradecimiento */
+  .mensaje {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    animation: fadeInUp 2s ease;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .mensaje p {
+    font-size: 1.2em;
+    color: #ffecb3;
+    font-style: italic;
+  }
+
+  footer {
+    margin: 40px 0 20px 0;
+    font-size: 1em;
+    opacity: 0.8;
+  }
+
+  /* Confeti */
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: gold;
+    top: -10px;
+    animation: fall 5s infinite;
+  }
+
+  @keyframes fall {
+    0% {transform: translateY(0) rotate(0);}
+    100% {transform: translateY(100vh) rotate(720deg);}
+  }
+</style>
+</head>
+<body>
+
+<h1>🎉 Te deseo un feliz cumpleaños 🎉</h1>
+
+<p>Hoy celebramos tus 50 años de vida, amor y sabiduría.  
+Gracias por ser un padre maravilloso. 💙</p>
+
+
+<div class="gallery">
+  <!-- 📸 Fotos con animación -->
+  <div class="photo">
+    <img src="2.jpg" alt="Foto 1 de papá">
+  </div>
+  <div class="photo">
+    <img src="1.jpg" alt="Foto 2 de papá">
+  </div>
+  <div class="photo">
+    <img src="3.jpg" alt="Foto 3 de papá">
+  </div>
+
+  <!-- 🎥 Video -->
+  <h2>🎬 Un momento especial</h2>
+  <video controls>
+    <source src="v1.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+
+  <!-- 💌 Mensaje de agradecimiento -->
+  <div class="mensaje">
+    <p>
+      Papá, gracias por todo lo que has hecho por mí.  
+      Gracias por apoyarme en los momentos difíciles,  
+      por creer en mí cuando yo no podía hacerlo,  
+      y por enseñarme con tu ejemplo a ser fuerte y seguir adelante.  
+      Todo lo que estás viendo aquí es gracias a tu apoyo y amor incondicional.  
+      Te quiero mucho 💛
+    </p>
+  </div>
+</div>
+
+<footer>Con todo mi cariño 💙 — Tu hijo/a</footer>
+
+<script>
+  // Confeti animado
+  for (let i = 0; i < 50; i++) {
+    const conf = document.createElement("div");
+    conf.className = "confetti";
+    conf.style.left = Math.random() * 100 + "vw";
+    conf.style.backgroundColor = ["#FFD700", "#FF4500", "#00BFFF", "#FF69B4"][Math.floor(Math.random() * 4)];
+    conf.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(conf);
+  }
+</script>
+
+</body>
+</html>
